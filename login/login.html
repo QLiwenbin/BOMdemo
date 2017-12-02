@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .black{
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background:rgba(0,0,0,0.5);
+        }
+        .box{
+            width:400px;
+            height:200px;
+            background:#989ff9;
+            border-radius:10px;
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+        }
+        .box span{
+            display: block;
+            font-size: 18px;
+            text-align: center;
+            padding-top:20px;
+        }
+        .box label{
+            margin: 20px;
+        }
+        .box input{
+            margin-top:20px;
+            width: 200px;
+            height: 30px;
+            background: #2196F3;
+            /*margin: 10px auto;*/
+            outline: none;
+            border:none;
+        }
+        .zhanghao , .mima {
+            width: 100%;
+            height: 40px;
+            padding: 0 60px;
+            box-sizing: border-box;
+        }
+        input[type="submit"]{
+            display: block;
+            width:70px;
+            height:30px;
+            margin:0 auto;
+            border-radius:5px;
+            color:#fff;
+            margin-top:20px;
+            text-decoration: none;
+            line-height:30px;
+            text-align: center;
+            background: #7190ed;
+        }
+    </style>
+</head>
+<body>
+    <div class="black">
+        <div class="box">
+            <span>请登录</span>
+            <div class="zhanghao">
+                <label>账号</label>
+                <input type="text" placeholder="请输入账号" class="username" name="username">
+            </div>
+            <div class="mima">
+                <label>密码</label>
+                <input type="password" placeholder="请输入密码" class="pass" name="pass">
+            </div>
+            <input type="submit" value="登录" class="submit">
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var username = document.querySelector('.username');
+        var pass = document.querySelector('.pass');
+        var submit = document.querySelector('.submit');
+//        console.log(username,pass,submit)
+        submit.onclick = function () {
+            if(username.value.trim() == 'admin' &&  pass.value.trim() =='123456'){
+                alert('登录成功')
+            }else{
+                location.replace('404.html')
+            }
+        }
+    }
+</script>

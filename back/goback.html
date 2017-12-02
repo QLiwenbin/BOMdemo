@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width:500px;
+            height:2000px;
+            border:5px solid #000;
+            margin: 0 auto;
+        }
+        .top{
+            width:100px;
+            height:100px;
+            background: #7190ed;
+            border-radius: 50%;
+            position:fixed;
+            right:10px;
+            bottom: 10px;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="top">返回顶部</div>
+</body>
+</html>
+<script>
+    window.onload =  function () {
+//        var body = document.querySelector('body');
+        var top = document.querySelector('.top');
+//        获取大box
+        var flag = true;
+//        定义一个开关
+        window.onscroll =  function () {
+//            给window加一个滚轮事件
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+//            实时监测滚动条高度
+            console.log(scrollTop);
+            if(scrollTop >= 200){
+//                如果滚动条高度大于等于200
+                    top.style.display = "block";
+//                    给top的加一个dispaly：block属性
+                    flag = false
+//                    并且让开关关闭
+                }else{
+                   if(flag == false){
+//                        如果开关是关闭的
+                       top.style.display = "none";
+//                       给top的加一个dispaly：none属性
+                       flag = true;
+//                       再把开关打开
+                    }
+                }
+            }
+
+
+    }
+</script>

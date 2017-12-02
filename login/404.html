@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .black{
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background:rgba(0,0,0,0.5);
+        }
+        .box{
+            width:400px;
+            height:200px;
+            background:#989ff9;
+            border-radius:10px;
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+        }
+        .box span{
+            display: block;
+            font-size: 18px;
+            text-align: center;
+            padding-top:20px;
+        }
+        .box label{
+            margin: 20px;
+        }
+        .box input{
+            margin-top:20px;
+            width: 200px;
+            height: 30px;
+            background: #2196F3;
+
+            outline: none;
+            border:none;
+        }
+        input[type="submit"]{
+            display: block;
+            width:70px;
+            height:30px;
+            margin:0 auto;
+            border-radius:5px;
+            color:#fff;
+            margin-top:20px;
+            text-decoration: none;
+            line-height:30px;
+            text-align: center;
+            background: #7190ed;
+        }
+        p{
+            display:block ;
+            width:150px;
+            height:30px;
+            margin:20px auto;
+            line-height: 40px;
+            text-align: center;
+            color:#fff;
+            overflow: hidden;
+        }
+        .miao{
+            display: block;
+            /*overflow: hidden;*/
+            float:left;
+            font-size: 16px;
+            line-height:0;
+            width:20px;
+            color:orangered;
+            height: 100%;
+            text-align: right;
+        }
+        h1{
+            display: block;
+            margin-top:33px;
+            color:#5f5750;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="black">
+    <div class="box">
+        <h1>出错了!</h1>
+        <p><span class="miao">5</span>秒后返回登录页面</p>
+        <input type="submit" value="返回" class="submit">
+    </div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var miao = document.querySelector('.miao');
+        var submit = document.querySelector('.submit');
+
+        var num = 5;
+        var t = setInterval(function () {
+            miao.innerText = num;
+            num--;
+            if(num < 0){
+                clearInterval(t);
+                location.replace('login.html');
+            }
+        },1000);
+        submit.onclick = function () {
+            location.replace('login.html');
+        }
+    }
+</script>
